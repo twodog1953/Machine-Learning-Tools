@@ -132,8 +132,8 @@ def add_rate(pos_col, s_col, rate_table):
     #                     site2: {position1: [$$, $$$], position2: [$$, $$$]}}
     # output:
     col_len = int(len(pos_col))
-    reg_col = pd.Series(np.zeros(col_len))
-    othol_col = pd.Series(np.zeros(col_len))
+    reg_col = pd.Series(np.zeros(col_len)).apply(lambda x: np.nan)
+    othol_col = pd.Series(np.zeros(col_len)).apply(lambda x: np.nan)
 
     for s in rate_table:
         for pos in rate_table[s]:
